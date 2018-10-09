@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8"/>
+        <title>Pragmatic</title>
+    </head>
+
+    <body>
+        <nav>
+            <table border="1">
+              <thead>
+                  <tr>
+                      <th><a href="main.html">Home</a></th>
+                      <th><a href="languages.html">Languages</a></th>
+                      <th><a href="frameworks.html">Frameworks</a></th>
+                      <th><a href="trends.html">Trends</a></th>
+                      <th><a href="feedback.html">Feedback</a></th>
+                  </tr>
+              </thead>  
+            </table>
+        </nav>
+
+        <hr>
+
+        <p>
+            <h1>Feedback</h1>
+        </p>
+
+        <form method="post" action="main.html">
+            <input type="hidden" name="recipent" value=".com">
+            <input type="hidden" name="subject"  value="Feedback Form">
+            <input type="hidden" name="redirect" value="main.html">
+            
+            <p>
+                <label>Name:
+                    <input name="name" type="text" size="25" maxlength="30">
+                </label>
+            </p>  
+            <p>  
+                <label>Email:
+                    <input name="email" type="text" size="25" maxlength="30">
+                </label>
+            </p>
+            <p>
+                <textarea name="feedback" cols="80" rows="15" maxlength="200">Enter feedback here...</textarea>
+            </p>
+            <p>
+                <label>How would you rate our site?
+                    <select name="rating">
+                        <option selected>5</option>
+                        <option>4</option>
+                        <option>3</option>
+                        <option>2</option>
+                        <option>1</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label>Would you recommend this site to your friend?</label>
+
+                <label>Yes
+                    <input name="recommendation" type="radio" value="yes" checked>
+                </label>
+
+                <label>No
+                    <input name="recommendation" type="radio" value="no">
+                </label>
+            </p>
+            <p>
+                <label>
+                    I want to receive newsletters.
+                    <input name="thingsliked" type="checkbox" value="Newsletters-agreement" checked>
+                </label>
+            </p>
+            <p>
+                <p>
+                    <label>
+                        I agree with site's regulations and policy.
+                        <input name="thingsliked" type="checkbox" value="Regulations-agreement" checked>
+                    </label>
+                </p>
+                <p>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Clear">
+                </p>
+            </p>
+
+        </form>
+    </body>
+
+</html>
