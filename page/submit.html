@@ -32,43 +32,54 @@
             <input type="hidden" name="subject"  value="Feedback Form">
             <input type="hidden" name="redirect" value="main.html">
             
-            <p>
-                <label>First name:
-                    <input name="first-name" type="text" size="30" maxlength="30" placeholder="John" autofocus>
-                </label>
-            </p>  
-            <p>
-                <label>Last name:
-                    <input name="last-name" type="text" size="30" maxlength="30" placeholder="Kowalsky" required>
-                </label>
-            </p>  
-            <p>  
-                <label>Birthday month:
-                <input list="months" size="25">
-                    <datalist id="months">
-                        <option>January</option>
-                        <option>February</option>
-                        <option>March</option>
-                        <option>April</option>
-                        <option>May</option>
-                        <option>June</option>
-                        <option>July</option>
-                        <option>August</option>
-                        <option>September</option>
-                        <option>October</option>
-                        <option>November</option>
-                        <option>December</option>
-                    </datalist>
-                </label>
-            </p> 
-            <p>
-                <label>Email address:</label>
-                <input type="email" placeholder="example@mail.com" size="26" required/>
-            </p>
-            <p>
-                <label>Phone number:</label>
-                <input type="tel" id="phone" name="phone" placeholder="533-270-555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required/>
-            </p>
+            <fieldset>
+                <legend>Personal data</legend>
+                <p>
+                    <label>First name:
+                        <input name="first-name" type="text" size="30" maxlength="30" placeholder="John" autofocus>
+                    </label>
+                </p>  
+                <p>
+                    <label>Last name:
+                        <input name="last-name" type="text" size="30" maxlength="30" placeholder="Kowalsky" required>
+                    </label>
+                </p>  
+                <p>  
+                    <label>Birthday month:
+                    <input list="months" size="25">
+                        <datalist id="months">
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </datalist>
+                    </label>
+                </p> 
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Contact data</legend>
+                <p>
+                    <label>Email address:</label>
+                    <input type="email" placeholder="example@mail.com" size="26" required/>
+                </p>
+                <p>
+                    <label>Phone number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="533-270-555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required/>
+                </p>
+
+            </fieldset>
+
             <p>
                 <input type="submit" value="Submit">
                 <input type="reset" value="Clear">
