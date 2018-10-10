@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8"/>
+        <title>Pragmatic - Submission</title>
+    </head>
+
+    <body>
+        <nav>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th><a href="main.html">Home</a></th>
+                        <th><a href="languages.html">Languages</a></th>
+                        <th><a href="frameworks.html">Frameworks</a></th>
+                        <th><a href="trends.html">Trends</a></th>
+                        <th><a href="feedback.html">Feedback</a></th>
+                        <th><a href="submit.html">Submission</a></th>
+                    </tr>
+                </thead>  
+            </table>
+        </nav>
+
+        <hr>
+
+        <p>
+            <h1>Submission</h1>
+        </p>
+
+        <form method="post" action="main.html" autocomplete="on">
+            <input type="hidden" name="recipent" value=".com">
+            <input type="hidden" name="subject"  value="Feedback Form">
+            <input type="hidden" name="redirect" value="main.html">
+            
+            <p>
+                <label>First name:
+                    <input name="first-name" type="text" size="30" maxlength="30" placeholder="John" autofocus>
+                </label>
+            </p>  
+            <p>
+                <label>Last name:
+                    <input name="last-name" type="text" size="30" maxlength="30" placeholder="Kowalsky" required>
+                </label>
+            </p>  
+            <p>  
+                <label>Birthday month:
+                <input list="months" size="25">
+                    <datalist id="months">
+                        <option>January</option>
+                        <option>February</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
+                        <option>July</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                    </datalist>
+                </label>
+            </p> 
+            <p>
+                <label>Email address:</label>
+                <input type="email" placeholder="example@mail.com" size="26" required/>
+            </p>
+            <p>
+                <label>Phone number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="533-270-555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required/>
+            </p>
+            <p>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Clear">
+            </p>
+        </form>
+    </body>
+</html>
