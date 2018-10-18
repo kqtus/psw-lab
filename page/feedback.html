@@ -5,52 +5,70 @@
         <title>Pragmatic - Feedback</title>
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/body.css">
+        <link rel="stylesheet" href="../css/main_nav.css">
+        <link rel="stylesheet" href="../css/content.css">
+        <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree|Exo+2|Pacifico|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
 
+    <!-- color palette edd3d3-e0a6ab-c16692-9e3262-54364f-->
     <body>
         <nav>
-            <table border="1">
-              <thead>
-                  <tr>
-                      <th><a href="main.html">Home</a></th>
-                      <th><a href="languages.html">Languages</a></th>
-                      <th><a href="frameworks.html">Frameworks</a></th>
-                      <th><a href="trends.html">Trends</a></th>
-                      <th><a href="feedback.html">Feedback</a></th>
-                      <th><a href="submit.html">Submission</a></th>
-                  </tr>
-              </thead>  
-            </table>
+            <div class="main_div">
+                <div class="main_menu_header">Pragmatic</div>
+                <div>
+                    <form role="search" class="main_search">
+                        <input type="search" name="q" placeholder="Search">
+                        <i class="material-icons md-18 md-light">search</i>
+                    </form>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">home</i>
+                    <a href="main.html">Home</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">code</i>
+                    <a href="languages.html">Languages</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">extension</i>
+                    <a href="frameworks.html">Frameworks</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">record_voice_over</i>
+                    <a href="trends.html">Trends</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">feedback</i>
+                    <a href="feedback.html">Feedback</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">library_add</i>
+                    <a href="submit.html">Submission</a>
+                </div>
+            </div>
         </nav>
-
-        <hr>
-
-        <h1>Feedback</h1>
-
-        <form method="post" action="main.html">
-            <input type="hidden" name="recipent" value="support@pragmatic.com">
-            <input type="hidden" name="subject"  value="Feedback Form">
-            <input type="hidden" name="redirect" value="main.html">
-            
-            <fieldset>
-                <legend>Contact data</legend>
-                <p>
-                    <label>Name:
-                        <input name="name" type="text" size="25" maxlength="30">
-                    </label>
-                </p>  
-                <p>  
-                    <label>Email:
-                        <input name="email" type="text" size="25" maxlength="30">
-                    </label>
-                </p>
-            </fieldset>
-
-            <fieldset>
-                <legend>Feedback</legend>
-                <p>
+        
+        <div style="margin-left: 240px; margin-top: 20px;">
+            <h1>Feedback</h1>
+    
+            <form method="post" action="main.html">
+                <input type="hidden" name="recipent" value="support@pragmatic.com">
+                <input type="hidden" name="subject"  value="Feedback Form">
+                <input type="hidden" name="redirect" value="main.html">
+                
+                <div>
+                    <label>Name</label>
+                    <input name="name" type="text" size="25" maxlength="30" placeholder="John Kowalsky">
+                </div>  
+                <div>  
+                    <label>Email</label>
+                    <input name="email" type="text" size="25" maxlength="30" placeholder="some@email.com">
+                </div>
+                <div>
                     <textarea name="feedback" cols="80" rows="15" maxlength="200">Enter feedback here...</textarea>
-                </p>
+                </div>
+
                 <p>
                     <label>How would you rate our site?
                         <select name="rating">
@@ -73,51 +91,52 @@
                         <input name="recommendation" type="radio" value="no">
                     </label>
                 </p>
-            </fieldset>
+    
+                <fieldset>
+                    <legend>Agreements</legend>
+                    <p>
+                        <label>
+                            I want to receive newsletters.
+                            <input name="thingsliked" type="checkbox" value="Newsletters-agreement" checked>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            I agree with site's regulations and policy.
+                            <input name="thingsliked" type="checkbox" value="Regulations-agreement" checked>
+                        </label>
+                    </p>
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Optional survey</legend>
+                    <p>
+                        <label>
+                            Your favourite color
+                            <input type="color" name="color" value="#ffffff" />
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Your favourite month
+                            <input type="month" name="month" value="#ffffff" />
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Your best pick
+                            <input type="range" min="0" max="10">
+                        </label>
+                    </p>
+                </fieldset>
+                <p>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Clear">
+                </p>
+            </form>
+        
 
-            <fieldset>
-                <legend>Agreements</legend>
-                <p>
-                    <label>
-                        I want to receive newsletters.
-                        <input name="thingsliked" type="checkbox" value="Newsletters-agreement" checked>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        I agree with site's regulations and policy.
-                        <input name="thingsliked" type="checkbox" value="Regulations-agreement" checked>
-                    </label>
-                </p>
-            </fieldset>
-
-            <fieldset>
-                <legend>Optional survey</legend>
-                <p>
-                    <label>
-                        Your favourite color
-                        <input type="color" name="color" value="#ffffff" />
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        Your favourite month
-                        <input type="month" name="month" value="#ffffff" />
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        Your best pick
-                        <input type="range" min="0" max="10">
-                    </label>
-                </p>
-            </fieldset>
-            <p>
-                <input type="submit" value="Submit">
-                <input type="reset" value="Clear">
-            </p>
-        </form>
-
+        </div>
         <footer>
             <p>Pragmatic Team 2018. All rights reserved.</p>
             <p>

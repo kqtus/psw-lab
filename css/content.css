@@ -1,0 +1,33 @@
+h1, label, legend {
+    font-family: Calibri;
+}
+
+
+
+input {
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 8px 0;
+    border: 1px solid lightgray;
+    vertical-align: middle;
+}
+
+input:focus {
+    border: 2px solid #4FA3F2;
+}
+
+fieldset {
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    resize: none;
+}
