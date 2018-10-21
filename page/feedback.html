@@ -12,7 +12,7 @@
     </head>
 
     <!-- color palette edd3d3-e0a6ab-c16692-9e3262-54364f-->
-    <body>
+    <body style="background: linear-gradient(to bottom, #F7FCFF, rgb(255, 255, 255)); height: 100%; min-height: 100%;">
         <nav>
             <div class="main_div">
                 <div class="main_menu_header">Pragmatic</div>
@@ -28,7 +28,22 @@
                 </div>
                 <div class="main_btn">
                     <i class="material-icons md-18 md-light">code</i>
-                    <a href="languages.html">Languages</a>
+                    <a href="#">Languages</a>
+
+                    <div class="dropdown-content">
+                        <div>
+                            <i class="material-icons md-18 md-light">linkedin</i>
+                            <a href="languages.html">C++</a>
+                        </div>
+                        <div>
+                            <i class="material-icons md-18 md-light">home</i>
+                            <a href="main.html">Java</a>
+                        </div>
+                        <div>
+                            <i class="material-icons md-18 md-light">home</i>
+                            <a href="main.html">C#</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="main_btn">
                     <i class="material-icons md-18 md-light">extension</i>
@@ -49,7 +64,7 @@
             </div>
         </nav>
         
-        <div style="margin-left: 240px; margin-top: 20px;">
+        <div class="content_main_section">
             <h1>Feedback</h1>
     
             <form method="post" action="main.html">
@@ -94,20 +109,21 @@
     
                 <fieldset>
                     <legend>Agreements</legend>
-                    <p>
-                        <label>
-                            I want to receive newsletters.
+                    <div>
+                        <label class="agreement-checkbox">
                             <input name="thingsliked" type="checkbox" value="Newsletters-agreement" checked>
+                            I want to receive newsletters.
                         </label>
-                    </p>
-                    <p>
-                        <label>
-                            I agree with site's regulations and policy.
+                    </div>
+                    <div>
+                        <label class="agreement-checkbox">
                             <input name="thingsliked" type="checkbox" value="Regulations-agreement" checked>
+                            I agree with site's regulations and policy.
                         </label>
-                    </p>
+                    </div>
                 </fieldset>
-    
+                
+                <!--
                 <fieldset>
                     <legend>Optional survey</legend>
                     <p>
@@ -129,22 +145,24 @@
                         </label>
                     </p>
                 </fieldset>
-                <p>
+                -->
+                <div style="margin-left:auto; margin-right:auto;">
                     <input type="submit" value="Submit">
                     <input type="reset" value="Clear">
-                </p>
+                </div>
             </form>
         
 
         </div>
-        <footer>
-            <p>Pragmatic Team 2018. All rights reserved.</p>
-            <p>
-                Contact information: 
-                <a href="mailto:support@pragmatic.com">
-                    support@pragmatic.com
-                </a>.
-            </p>
-        </footer>
+
     </body>
+    <footer>
+        <p>Pragmatic Team 2018. All rights reserved.</p>
+        <p>
+            Contact information: 
+            <a href="mailto:support@pragmatic.com">
+                support@pragmatic.com
+            </a>.
+        </p>
+    </footer>
 </html>

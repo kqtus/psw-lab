@@ -5,9 +5,12 @@
         <title>Pragmatic - Frameworks</title>
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/body.css">
+        <link rel="stylesheet" href="../css/prg_main_nav.css">
+        <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
     </head>
 
     <body>
+        <!--
         <nav>
             <table border="1">
                 <thead>
@@ -22,7 +25,64 @@
                 </thead>  
             </table>
         </nav>
+        -->
+        <div id="nav-div">
+            <nav id="main-nav" class="prg-main-nav">
+                <table id="main-nav-tab" class="prg-main-nav-tab">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div id="main-nav-toggle-btn" class="container" id="main-nav-toggle-btn" >
+                                    <div class="bar1"></div>
+                                    <div class="bar2"></div>
+                                    <div class="bar3"></div>
+                                </div>
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th>
+                                Home
+                            </th>
+                            
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>
+                                <a href="languages.html">Languages</a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>
+                                <a href="frameworks.html">Frameworks</a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>
+                                <a href="submit.html">Tutorials</a>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </nav>
+        </div>
+        
 
+        <script>
+            var main_nav = document.getElementById('main-nav');
+            var toggle_btn = document.getElementById('main-nav-toggle-btn');
+            var nav_div = document.getElementById('nav-id');
+
+            toggle_btn.onclick = function() {               
+                toggle_btn.classList.toggle("change");
+                nav_div.classList.toggle('transIn');
+            }
+        </script>
         <hr>
 
         <p>

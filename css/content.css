@@ -2,8 +2,6 @@ h1, label, legend {
     font-family: Calibri;
 }
 
-
-
 input {
     border-radius: 5px;
     padding: 5px 10px;
@@ -30,4 +28,34 @@ textarea {
     border-radius: 5px;
     background-color: #ffffff;
     resize: none;
+}
+
+.content_main_section {
+    background: white;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 30%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.content_main_section h1 {
+    
+}
+
+.content_main_section input[type=submit], input[type=reset] {
+    background: #1F487E;
+    color: #FFFFFF;
+    width: 80px;
+    height: 30px;
+    font-family: Calibri;
+    font-size: 15px;
+}
+
+.agreement-checkbox {
+    font-size: 12px;
+    color: rgb(54, 54, 54);
+
 }
