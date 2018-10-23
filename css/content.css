@@ -2,6 +2,20 @@ h1, label, legend {
     font-family: Calibri;
 }
 
+.parallax { 
+    /* The image used */
+    background-image: url('../img/bg_sand.png');
+
+    /* Full height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 input {
     border-radius: 5px;
     padding: 5px 10px;
@@ -37,6 +51,17 @@ textarea {
     margin-right: auto;
     padding: 20px;
     width: 30%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.content_main_section_full {
+    background: white;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 50%;
     border-radius: 12px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

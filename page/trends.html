@@ -3,186 +3,226 @@
     <head>
         <meta charset = "utf-8"/>
         <title>Pragmatic - Trends</title>
+
+        <link rel="stylesheet" href="../css/tables.css">
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/body.css">
+        <link rel="stylesheet" href="../css/main_nav.css">
+        <link rel="stylesheet" href="../css/content.css">
+        <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree|Exo+2|Pacifico|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
 
     <body>
         <nav>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th><a href="main.html">Home</a></th>
-                        <th><a href="languages.html">Languages</a></th>
-                        <th><a href="frameworks.html">Frameworks</a></th>
-                        <th><a href="trends.html">Trends</a></th>
-                        <th><a href="feedback.html">Feedback</a></th>
-                        <th><a href="submit.html">Submission</a></th>
-                    </tr>
-                </thead>  
-            </table>
+            <div class="main_div">
+                <div class="main_menu_header">Pragmatic</div>
+                <div style="margin-left: 15px;">
+                    <form role="search" class="main_search">
+                        <input type="search" name="q" placeholder="Search">
+                    </form>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">home</i>
+                    <a href="main.html">Home</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">code</i>
+                    <a href="#">Languages</a>
+
+                    <div class="dropdown-content">
+                        <div>
+                            <a href="languages.html">C++</a>
+                        </div>
+                        <div>
+                            <a href="languages.html">Java</a>
+                        </div>
+                        <div>
+                            <a href="languages.html">C#</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">extension</i>
+                    <a href="frameworks.html">Frameworks</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">record_voice_over</i>
+                    <a href="trends.html">Trends</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">feedback</i>
+                    <a href="feedback.html">Feedback</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">library_add</i>
+                    <a href="submit.html">Submission</a>
+                </div>
+            </div>
         </nav>
 
-        <hr>
-        <h1>Trends</h1>
+        <div class="content_main_section_full">
+            <h1>Trends</h1>
 
-        <ol>
-            <li>
-                <p id="langs-section">
-                    <strong>Languages </strong>
-                    <a href="#frameworks-section">(next)</a>
-                </p>
-                <br>
-
-                <table border="1" cellpadding="10">
-                    <thead>
-                        <tr>
-                            <th>Position</th>
-                            <th>Logo</th>
-                            <th>Name</th>
-                            <th>Popularity gain</th>
-                            <th>Search hits (last 7 days)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>1.</th>
-                            <th>
-                                <a href="http://www.google.com/search?q=java+programming+language">
-                                    <img src="../img/java_logo.jpg" alt="Java logo" width="64" height="64"/>
-                                </a>
-                            </th>
-                            <th>Java</th>
-                            <th><meter value="0.40">40%</meter></th>
-                            <th>120000</th>
-                        </tr>
-                        <tr>
-                            <th>2.</th>
-                            <th>
-                                <a href="http://www.google.com/search?q=C+sharp+programming+language">
-                                    <img src="../img/cs_logo.jpg" alt="C# logo" width="64" height="64"/>
-                                </a>
-                            </th>
-                            <th>C#</th>
-                            <th><meter value="0.32">32%</meter></th>
-                            <th>94000</th>
-                        </tr>
-                        <tr>
-                            <th>3.</th>
-                            <th>
-                                <a href="http://www.google.com/search?q=Python+programming+language">
-                                    <img src="../img/python_logo.jpg" alt="Python logo" width="64" height="64"/>
-                                </a>
-                            </th>
-                            <th>Python</th>
-                            <th><meter value="0.12">12%</meter></th>
-                            <th>76600</th>
-                        </tr>
-                    </tbody>
-                </table>
-            </li>
-
-            <li>
-                <p id="frameworks-section">
-                        <strong>Frameworks </strong>
-                        <a href="#technologies-section">(next)</a>
+            <ol>
+                <li>
+                    <p id="langs-section">
+                        <strong>Languages </strong>
+                        <a href="#frameworks-section">(next)</a>
                     </p>
-                <br>
+                    <br>
+    
+                    <table border="1" cellpadding="10">
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Logo</th>
+                                <th>Name</th>
+                                <th>Gain</th>
+                                <th>Hits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1.</th>
+                                <th>
+                                    <a href="http://www.google.com/search?q=java+programming+language">
+                                        <img src="../img/java_logo.jpg" alt="Java logo" width="64" height="64"/>
+                                    </a>
+                                </th>
+                                <th>Java</th>
+                                <th><meter value="0.40">40%</meter></th>
+                                <th>120000</th>
+                            </tr>
+                            <tr>
+                                <th>2.</th>
+                                <th>
+                                    <a href="http://www.google.com/search?q=C+sharp+programming+language">
+                                        <img src="../img/cs_logo.jpg" alt="C# logo" width="64" height="64"/>
+                                    </a>
+                                </th>
+                                <th>C#</th>
+                                <th><meter value="0.32">32%</meter></th>
+                                <th>94000</th>
+                            </tr>
+                            <tr>
+                                <th>3.</th>
+                                <th>
+                                    <a href="http://www.google.com/search?q=Python+programming+language">
+                                        <img src="../img/python_logo.jpg" alt="Python logo" width="64" height="64"/>
+                                    </a>
+                                </th>
+                                <th>Python</th>
+                                <th><meter value="0.12">12%</meter></th>
+                                <th>76600</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+    
+                <li>
+                    <p id="frameworks-section">
+                            <strong>Frameworks </strong>
+                            <a href="#technologies-section">(next)</a>
+                        </p>
+                    <br>
+    
+                    <table border="1" cellpadding="10">
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Logo</th>
+                                <th>Name</th>
+                                <th>Gain</th>
+                                <th>Hits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1.</th>
+                                <th>
+                                    <a href="http://www.google.com/search?q=vue.js+framework">
+                                        <img src="../img/vue_logo.png" alt="VUE.js logo" width="64" height="64"/>
+                                    </a>
+                                </th>
+                                <th>VUE.JS</th>
+                                <th><meter value="0.52">52%</meter></th>
+                                <th>4104</th>
+                            </tr>
+                            <tr>
+                                <th>2.</th>
+                                <th>
+                                    <a href="http://www.google.com/search?q=angular+framework">
+                                        <img src="../img/angular_logo.png" alt="Angular logo" width="64" height="64"/>
+                                    </a>
+                                </th>
+                                <th>Angular</th>
+                                <th><meter value="0.42">42%</meter></th>
+                                <th>2040</th>
+                            </tr>
+                            <tr>
+                                <th>3.</th>
+                                
+                                <th>
+                                    <a href="http://www.google.com/search?q=asp.net+framework">
+                                        <img src="../img/asp_logo.png" alt="ASP.NET logo" width="64" height="64"/>
+                                    </a>
+                                </th>
+                                <th>ASP.NET</th>
+                                <th><meter value="0.12">12%</meter></th>
+                                <th>1233</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+    
+                <li>
+                    <p id="technologies-section">
+                        <strong>Technologies </strong>
+                    </p>
+                    <br>
+    
+                    <table border="2" width="350" height="350" cellpadding="10">
+                        <tbody>
+                            <tr>
+                                <th rowspan="2" colspan="2" valign="bottom">Machine learning</th>
+                                <th>Serverless</th>
+                                <th>Cloud computing</th>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">DDD</th>
+                                <th>
+                                    <table border="1">
+                                        <tbody>
+                                            <tr>
+                                                <th>AWS</th>
+                                                <th>Scrum</th>
+                                            </tr>
+                                            <tr>
+                                                <th>git</th>
+                                                <th>5G</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="2">IoT</th>
+                                <th rowspan="2">Reactive</th>
+                            </tr>
+                            <tr>
+                                <th>VR</th>
+                                <th>RayTracing</th>
+                                <th>AI</th>
+                            </tr>    
+                        </tbody>
+                    </table>
+                </li>
+            </ol>
+        </div>
 
-                <table border="1" cellpadding="10">
-                    <thead>
-                        <tr>
-                            <th>Position</th>
-                            <th>Logo</th>
-                            <th>Name</th>
-                            <th>Popularity gain</th>
-                            <th>Search hits (last 7 days)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>1.</th>
-                            <th>
-                                <a href="http://www.google.com/search?q=vue.js+framework">
-                                    <img src="../img/vue_logo.png" alt="VUE.js logo" width="64" height="64"/>
-                                </a>
-                            </th>
-                            <th>VUE.JS</th>
-                            <th><meter value="0.52">52%</meter></th>
-                            <th>4104</th>
-                        </tr>
-                        <tr>
-                            <th>2.</th>
-                            <th>
-                                <a href="http://www.google.com/search?q=angular+framework">
-                                    <img src="../img/angular_logo.png" alt="Angular logo" width="64" height="64"/>
-                                </a>
-                            </th>
-                            <th>Angular</th>
-                            <th><meter value="0.42">42%</meter></th>
-                            <th>2040</th>
-                        </tr>
-                        <tr>
-                            <th>3.</th>
-                            
-                            <th>
-                                <a href="http://www.google.com/search?q=asp.net+framework">
-                                    <img src="../img/asp_logo.png" alt="ASP.NET logo" width="64" height="64"/>
-                                </a>
-                            </th>
-                            <th>ASP.NET</th>
-                            <th><meter value="0.12">12%</meter></th>
-                            <th>1233</th>
-                        </tr>
-                    </tbody>
-                </table>
-            </li>
 
-            <li>
-                <p id="technologies-section">
-                    <strong>Technologies </strong>
-                </p>
-                <br>
-
-                <table border="2" width="350" height="350" cellpadding="10">
-                    <tbody>
-                        <tr>
-                            <th rowspan="2" colspan="2" valign="bottom">Machine learning</th>
-                            <th>Serverless</th>
-                            <th>Cloud computing</th>
-                        </tr>
-                        <tr>
-                            <th rowspan="2">DDD</th>
-                            <th>
-                                <table border="1">
-                                    <tbody>
-                                        <tr>
-                                            <th>AWS</th>
-                                            <th>Scrum</th>
-                                        </tr>
-                                        <tr>
-                                            <th>git</th>
-                                            <th>5G</th>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th colspan="2">IoT</th>
-                            <th rowspan="2">Reactive</th>
-                        </tr>
-                        <tr>
-                            <th>VR</th>
-                            <th>RayTracing</th>
-                            <th>AI</th>
-                        </tr>    
-                    </tbody>
-                </table>
-            </li>
-        </ol>
-
-        <footer>
+        <!--<footer>
             <p>Pragmatic Team 2018. All rights reserved.</p>
             <p>
                 Contact information: 
@@ -190,6 +230,6 @@
                     support@pragmatic.com
                 </a>.
             </p>
-        </footer>
+        </footer>-->
     </body>
 </html>
