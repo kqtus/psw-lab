@@ -22,6 +22,10 @@
     position: relative;
 }
 
+.main_btn:active {
+    background: white;
+}
+
 .main_menu_header {
     background: #23395B;
     width: 100%;
@@ -86,9 +90,24 @@ a:visited {
     background-color: #1F487E;
     background-image: 'fa fa-search';
     border-radius: 5px;
+    border-width: 2px;
     padding: 5px 10px;
     margin: 8px 0;
     border: 1px solid  #4FA3F2;
     color:  #4FA3F2;
     vertical-align: middle;
+}
+
+
+@media screen and (min-width: 400px) {
+    .main_div {
+        width: 150px;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+    .main_div {
+        width: 220px;
+    }
 }

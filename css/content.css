@@ -25,8 +25,15 @@ input {
 }
 
 input:focus {
-    border: 2px solid #4FA3F2;
+    border-width: 2px ;
+    border-color: #4FA3F2;
+    border-style: dotted;
 }
+
+p#article, .iii {}
+p .article{}
+p > .article{}
+.article p {}
 
 fieldset {
     border-radius: 5px;

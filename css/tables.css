@@ -2,14 +2,12 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+
 th, td {
     border-bottom: 1px solid #ddd;
 }
 
-table {
-    border-collapse: collapse;
-    font-family: Calibri;
-}
+
 
 table, th, td {
     border: 0px;
@@ -20,4 +18,9 @@ table, th, td {
 thead {
     background-color: #4FA3F2;
     color: #FFFFFF;
+}
+
+
+td:last-child {
+    border-bottom: #4FA3F2;
 }

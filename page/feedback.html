@@ -9,6 +9,12 @@
         <link rel="stylesheet" href="../css/content.css">
         <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree|Exo+2|Pacifico|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <style>
+            input:required {
+                background: rgb(224, 255, 223);
+            }
+        </style>
     </head>
 
     <!-- color palette edd3d3-e0a6ab-c16692-9e3262-54364f-->
@@ -32,13 +38,24 @@
 
                     <div class="dropdown-content">
                         <div>
-                            <a href="languages.html">C++</a>
+                            <a href="languages.html">ObjectOriented</a>
+                            <div class="dropdown-content">
+                                    <div>
+                                        <a href="languages.html">C++</a>
+                                    </div>
+                                    <div>
+                                        <a href="languages.html">Java</a>
+                                    </div>
+                                    <div>
+                                        <a href="languages.html">C#</a>
+                                    </div>
+                                </div>
                         </div>
                         <div>
-                            <a href="languages.html">Java</a>
+                            <a href="languages.html">Structural</a>
                         </div>
                         <div>
-                            <a href="languages.html">C#</a>
+                            <a href="languages.html">Functional</a>
                         </div>
                     </div>
                 </div>
@@ -71,11 +88,11 @@
                 
                 <div>
                     <label>Name</label>
-                    <input name="name" type="text" size="25" maxlength="30" placeholder="John Kowalsky">
+                    <input name="name" type="text" size="25" maxlength="30" placeholder="John Kowalsky" required>
                 </div>  
                 <div>  
                     <label>Email</label>
-                    <input name="email" type="text" size="25" maxlength="30" placeholder="some@email.com">
+                    <input name="email" type="text" size="25" maxlength="30" placeholder="some@email.com" required>
                 </div>
                 <div>
                     <textarea name="feedback" cols="80" rows="15" maxlength="200">Enter feedback here...</textarea>
