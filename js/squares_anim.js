@@ -4,6 +4,8 @@ var squares = [];
 var max_width_str = '900';
 var max_height_str = '500';
 
+var canvas;
+
 function createSquare(pos) {
     numSquares++;
 
@@ -42,6 +44,22 @@ function getRandomPosOnScreen() {
     var y = Math.floor(Math.random() * parseInt(max_height_str));
 
     return (x=x, y=y);
+}
+
+function init() {
+    createCanvas();
+    createSquares();
+}
+
+function createCanvas() {
+    canvas = document.createElement('canvas');
+
+    canvas.id = "Layer";
+    canvas.width = parseInt(max_width_str);
+    canvas.height = parseInt(max_height_str);
+    canvas.style.color = '#55FF55';
+
+    document.body.appendChild(canvas);
 }
 
 function createSquares() {
