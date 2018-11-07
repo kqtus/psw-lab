@@ -1,7 +1,7 @@
 .parallax { 
     /* The image used */
     background-image: url('../../img/bg_sand.png');
-
+    border-radius: 15px 15px 15px 15px;
     /* Full height */
     height: 100%; 
 
@@ -12,6 +12,12 @@
     background-size: cover;
 }
 
+.desc-box {
+    margin: 10px 20px 10px 20px;
+    column-count: 3;
+    column-gap: 20px;
+    column-rule: solid 2px white;
+}
 .div-tiles-container {
     display: inline-block;
     margin-left: auto;
@@ -69,4 +75,26 @@
 .material-icons.header-icon {
     font-size: 40px;
     color: hsl(209, 99%, 41%);
+}
+
+
+.buy-btn {
+    border-image-source: url('../../img/bg_sand.png');
+    border-image-width: 10px;
+    border-image-slice: 40%;
+    border-image-repeat: stretch;
+    background: radial-gradient(#9198e5, #e66465);
+    width: 80px;
+    height: 80px;
+    color: white; 
+    
+    animation: buy-btn-on-focus 3s infinite;
+}
+
+@keyframes buy-btn-on-focus {
+    40% { width: 100px; }
+    80% { 
+        width: 120px;
+        background: #9198e5;
+    }
 }
