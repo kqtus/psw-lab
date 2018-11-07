@@ -21,6 +21,22 @@
     column-gap: 20px;
     column-rule: solid 2px white;
 }
+
+@media screen and (max-width: 1200px) {
+    .desc-box {
+        column-count: 3;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .desc-box {
+        column-count: 2;
+    }
+}
+
+
+
 .div-tiles-container {
     margin-top: 20px;
     margin-bottom: 30px;
