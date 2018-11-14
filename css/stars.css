@@ -1,0 +1,29 @@
+.tech-div {
+    display: inline-flex;
+    left: auto;
+    position: relative;
+}
+
+.square-div {
+    display: flex;
+    padding: 0px 0px 0px 10px;
+    margin: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    width: 90px;
+    height: 60px;
+    color: white;
+    align-items: center;
+}
+
+.col1 {
+    background: rgb(161, 99, 231);
+}
+.col2 {
+    background: rgb(139, 73, 214);
+}
+.col3 {
+    background: rgb(114, 44, 194);
+}
+.col4 {
+    background: rgb(81, 14, 158);
+}
