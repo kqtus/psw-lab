@@ -2,6 +2,7 @@
     display: inline-flex;
     left: auto;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .square-div {

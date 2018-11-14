@@ -1,7 +1,7 @@
 var numSquares = 0;
 var squares = [];
 
-var technologies = ['Redux', 'React', 'Qt', 'C++', 'Flask', 'Flutter', 'Spring', 'ASP.NET', 'NoSQL', 'Kotlin']
+var technologies = ['Redux', 'React', 'Qt', 'C++', 'Flask', 'Flutter', 'Spring', 'ASP.NET', 'NoSQL', 'Kotlin', "Django", "Node.js", "Polymer.js", "Vue.js"]
 
 var max_width_str = '900';
 var max_height_str = '500';
@@ -75,7 +75,9 @@ function createTiles() {
     var year = prompt("Please enter year", "2018");
     alert("You will see best technologies to learn in " + year);
     
-    var num_squares_to_create = 5; //Math.floor(Math.random() * 50) + 50;
+    var tiles_num = prompt("Please enter number of tiles to see", "");
+
+    var num_squares_to_create = parseInt(tiles_num); //Math.floor(Math.random() * 50) + 50;
 
     num_discover_pressed++;
     var set = "";
