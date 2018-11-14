@@ -1,17 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset = "utf-8"/>
+        <title>Pragmatic - Feedback</title>
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/body.css">
+        <link rel="stylesheet" href="../css/main_nav.css">
+        <link rel="stylesheet" href="../css/content.css">
+        <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree|Exo+2|Pacifico|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
         <script type="text/javascript" src="../js/squares_anim.js"></script>
         <link rel="stylesheet" href="../css/stars.css">
+
+        <style>
+            input:required {
+                background: rgb(224, 255, 223);
+            }
+        </style>
     </head>
 
-    <body id="bodie">
-        <div>
-            <div class="tech-div">
+
+    <body class="parallax">
+        <nav>
+            <div class="main_div">
+                <div class="main_menu_header">Pragmatic</div>
+                <div style="margin-left: 15px;">
+                    <form role="search" class="main_search">
+                        <input type="search" name="q" placeholder="Search">
+                    </form>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">home</i>
+                    <a href="main.html">Home</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">code</i>
+                    <a href="#">Languages</a>
+
+                    <div class="dropdown-content">
+                        <div>
+                            <a href="languages.html">ObjectOriented</a>
+                            <div class="dropdown-content">
+                                    <div>
+                                        <a href="languages.html">C++</a>
+                                    </div>
+                                    <div>
+                                        <a href="languages.html">Java</a>
+                                    </div>
+                                    <div>
+                                        <a href="languages.html">C#</a>
+                                    </div>
+                                </div>
+                        </div>
+                        <div>
+                            <a href="languages.html">Structural</a>
+                        </div>
+                        <div>
+                            <a href="languages.html">Functional</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">extension</i>
+                    <a href="frameworks.html">Frameworks</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">record_voice_over</i>
+                    <a href="trends.html">Trends</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">feedback</i>
+                    <a href="feedback.html">Feedback</a>
+                </div>
+                <div class="main_btn">
+                    <i class="material-icons md-18 md-light">library_add</i>
+                    <a href="submit.html">Submission</a>
+                </div>
             </div>
-            <div id="bodie" style="position: absolute; left: 50%">
-                <button id="init_btn" onClick="init()">Discover</button>
-                <button id="update_btn" onClick="update()">Update</button>
+        </nav>
+        
+        <div class="content_main_section" style="width: 50%">
+            <div>
+                <div id="bodie" style="position: initial; left: 50%">
+                    <script>
+                        document.writeln("Best technologies to learn");
+                    </script>
+                    
+                    <button id="init_btn" onClick="init()">Discover</button>
+                </div>
+
+                <div class="tech-div" id="tech-div">
+                </div>
             </div>
         </div>
 

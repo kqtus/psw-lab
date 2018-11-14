@@ -15,15 +15,45 @@
     align-items: center;
 }
 
-.col1 {
+.col1-purple-set {
     background: rgb(161, 99, 231);
 }
-.col2 {
+.col2-purple-set {
     background: rgb(139, 73, 214);
 }
-.col3 {
+.col3-purple-set {
     background: rgb(114, 44, 194);
 }
-.col4 {
+.col4-purple-set {
     background: rgb(81, 14, 158);
+}
+
+
+.col1-blue-set {
+    background: rgb(99, 145, 231);
+}
+.col2-blue-set {
+    background: rgb(62, 118, 223);
+}
+.col3-blue-set {
+    background: rgb(33, 99, 221);
+}
+.col4-blue-set {
+    background: rgb(20, 80, 192);
+}
+
+button {
+    font-family: Calibri;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+    vertical-align: middle;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-right: 10px;
+    position: relative;
+    border: 0px;
+    color: white;
+    background: rgb(0, 106, 138);
 }

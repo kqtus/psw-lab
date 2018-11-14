@@ -6,13 +6,14 @@ var technologies = ['Redux', 'React', 'Qt', 'C++', 'Flask', 'Flutter', 'Spring',
 var max_width_str = '900';
 var max_height_str = '500';
 
-var squares_once_created = false;
+var initialized = false;
+var num_discover_pressed = 0;
 
 function getRandomTechnologyStr() {
     return technologies[Math.floor(Math.random() * technologies.length)];
 }
 
-function createTile(pos) {
+function createTile(pos, set) {
     numSquares++;
 
     console.log('creating square on pos ' + pos)
@@ -37,9 +38,10 @@ function createTile(pos) {
             break;
     }
 
-    square.className = color_tint;
+    square.className = color_tint + set;
+    console.log(square.className);
     square.id = "square" + numSquares;
-    document.getElementsByClassName('tech-div')[0].appendChild(square);
+    document.getElementById('tech-div').appendChild(square);
     
     return square;
 }
@@ -52,9 +54,17 @@ function getRandomPosOnScreen() {
 }
 
 function init() {
-    var person = prompt("Please enter your name", "Harry Potter");
-    alert("You will be adding " + person);
-    createTiles();
+    if (!initialized) {
+        window.addEventListener("click", function() {
+            update();
+        });
+    
+        document.getElementById("init_btn").addEventListener("click", function() {
+            clearTilesDiv();
+            createTiles();
+        });
+        initialized = true;
+    }
 }
 
 function update() {
@@ -62,23 +72,39 @@ function update() {
 }
 
 function createTiles() {
-    squares_once_created = true;
+    var year = prompt("Please enter year", "2018");
+    alert("You will see best technologies to learn in " + year);
+    
     var num_squares_to_create = 5; //Math.floor(Math.random() * 50) + 50;
 
+    num_discover_pressed++;
+    var set = "";
+
+    if (num_discover_pressed % 2 == 0)
+        set = "-purple-set";
+    else 
+        set = "-blue-set";
+
+    console.log(set);
     while (num_squares_to_create > 0) {
-        var square = createTile(getRandomPosOnScreen());
+        var square = createTile(getRandomPosOnScreen(), set);
         squares.push(square);
 
         num_squares_to_create--;
     }
 }
 
+function clearTilesDiv() {
+    document.getElementById('tech-div').innerHTML = "";
+}
+
 function updateTiles() {
-    if (squares_once_created == true) {
-        var tilesNum = squares.length - 1;
-        do {
-            squares[tilesNum].textContent = getRandomTechnologyStr();
-            tilesNum--;
-        } while(tilesNum >= 0)
-    }
+    var tilesNum = squares.length - 1;
+    if (tilesNum == -1)
+        return;
+
+    do {
+        squares[tilesNum].textContent = getRandomTechnologyStr();
+        tilesNum--;
+    } while(tilesNum >= 0)
 }
