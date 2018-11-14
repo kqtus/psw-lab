@@ -3,8 +3,8 @@ var squares = [];
 
 var technologies = ['Redux', 'React', 'Qt', 'C++', 'Flask', 'Flutter', 'Spring', 'ASP.NET', 'NoSQL', 'Kotlin', "Django", "Node.js", "Polymer.js", "Vue.js"]
 
-var max_width_str = '900';
-var max_height_str = '500';
+var max_width_str = '900.33';
+var max_height_str = '500.33';
 
 var initialized = false;
 var num_discover_pressed = 0;
@@ -47,8 +47,8 @@ function createTile(pos, set) {
 }
 
 function getRandomPosOnScreen() {
-    var x = Math.floor(Math.random() * parseInt(max_width_str));
-    var y = Math.floor(Math.random() * parseInt(max_height_str));
+    var x = Math.floor(Math.random() * parseFloat(max_width_str));
+    var y = Math.floor(Math.random() * parseFloat(max_height_str));
 
     return (x=x, y=y);
 }
