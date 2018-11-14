@@ -8,13 +8,17 @@ var max_height_str = '500';
 
 var squares_once_created = false;
 
-function createSquare(pos) {
+function getRandomTechnologyStr() {
+    return technologies[Math.floor(Math.random() * technologies.length)];
+}
+
+function createTile(pos) {
     numSquares++;
 
     console.log('creating square on pos ' + pos)
     var square = document.createElement("div");
 
-    tech_str = technologies[Math.floor(Math.random() * technologies.length)]
+    tech_str = getRandomTechnologyStr();
     square.textContent = tech_str;
 
     var color_tint = "square-div ";
@@ -50,22 +54,31 @@ function getRandomPosOnScreen() {
 function init() {
     var person = prompt("Please enter your name", "Harry Potter");
     alert("You will be adding " + person);
-    createSquares();
+    createTiles();
 }
 
+function update() {
+    updateTiles();
+}
 
-function createSquares() {
-    if (!squares_once_created) {
-        
-    }
-
+function createTiles() {
     squares_once_created = true;
     var num_squares_to_create = 5; //Math.floor(Math.random() * 50) + 50;
 
     while (num_squares_to_create > 0) {
-        var square = createSquare(getRandomPosOnScreen());
+        var square = createTile(getRandomPosOnScreen());
         squares.push(square);
 
         num_squares_to_create--;
+    }
+}
+
+function updateTiles() {
+    if (squares_once_created == true) {
+        var tilesNum = squares.length - 1;
+        do {
+            squares[tilesNum].textContent = getRandomTechnologyStr();
+            tilesNum--;
+        } while(tilesNum >= 0)
     }
 }
