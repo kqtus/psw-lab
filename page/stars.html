@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
         <script type="text/javascript" src="../js/squares_anim.js"></script>
+        <script type="text/javascript" src="../js/zad1.js"></script>
+
         <link rel="stylesheet" href="../css/stars.css">
 
         <style>
@@ -21,7 +23,7 @@
     </head>
 
 
-    <body class="parallax">
+    <body id="body" class="parallax">
         <nav>
             <div class="main_div">
                 <div class="main_menu_header">Pragmatic</div>
@@ -89,9 +91,11 @@
                     
                     <button id="init_btn" onClick="init()">Discover</button>
                 </div>
-
-                <div class="tech-div" id="tech-div">
+                <div>
+                    <button id="create_div_btn" onClick="createDiv()">Create DIV</button>
                 </div>
+                <div class="tech-div" id="tech-div"></div>
+                <div id="divs"></div>
             </div>
         </div>
 
