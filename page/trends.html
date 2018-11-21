@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         
         <script type="text/javascript" src="../js/zad2.js"></script>
+        <script type="text/javascript" src="../js/zad3.js"></script>
 
         <style>
             table {
@@ -231,6 +232,24 @@
             </ol>
 
             <button id="stats_btn" onclick="logStats()" class="main_btn">Get page stats.</button> 
+
+            <div>
+                <label>Would you like to change the background?</label>
+                <input type="color" id="bg_select" value="#ffffff" onchange="onBgColorSelChanged()">
+            </div>
+
+            <div>
+                <label>Would you like to change the foreground?</label>
+                <input type="color" id="fg_select" value="#000000" onchange="onFgColorSelChanged()">
+            </div>
+
+            <label>Would you like to change the font?
+                <select id="font_select" onchange="onFontSelChanged()">
+                    <option selected>Times New Roman</option>
+                    <option>Comic Sans</option>
+                    <option>Calbiri</option>
+                </select>
+            </label>
         </div>
 
         
