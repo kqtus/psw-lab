@@ -5,9 +5,9 @@ function getImagesStats() {
     var maxImgName = "";
 
     for (var i = 0; i < document.images.length; i++) {
-        var curImg = document.images.values[i];
+        var curImg = document.images[i];
         var curImgWidth = curImg.width;
-        var curImgHeight =curImg.height;
+        var curImgHeight = curImg.height;
 
         if (curImgHeight * curImgWidth >= maxImgHeight * maxImgWidth) {
             maxImgHeight = curImgHeight;
@@ -16,7 +16,7 @@ function getImagesStats() {
         }
     }
 
-    return (imgsCount, maxImgWidth, maxImgHeight, maxImgName);
+    return [imgsCount, maxImgWidth, maxImgHeight, maxImgName];
 }
 
 function getAnchorsStats() {
@@ -32,7 +32,7 @@ function getAnchorsStats() {
     var anchorName = prompt("Please type anchor name", "");
     var idOfTypedAnchor = document.anchors.namedItem(anchorName);
 
-    return (anchorsCount, anchorsNames, anchorsWithEvenIds, idOfTypedAnchor);
+    return [anchorsCount, anchorsNames, anchorsWithEvenIds, idOfTypedAnchor];
 }
 
 function getLinksStats() {
@@ -40,18 +40,29 @@ function getLinksStats() {
     var uniqueHosts = new Set();
     var mostPopularHost = "";
 
-    document.links.forEach(function (item) {
-        uniqueHosts.add(item.hostname);
-    });
+    for (var i = 0; i < linksCount; i++) {
+        uniqueHosts.add(document.links[i].hostname);
+    }
 
     function getMostPopular(arr){
-        return arr.sort((a,b) =>
-              arr.filter(v => v===a).length
-            - arr.filter(v => v===b).length
-        ).pop();
+        conv_array = [].slice.call(arr)
+        return conv_array.sort(function(a,b) {
+            return conv_array.filter(v => v===a).length - conv_array.filter(v => v===b).length
+        }).pop();
     }
 
     mostPopularHost = getMostPopular(document.links);
     
-    return (linksCount, uniqueHosts, mostPopularHost);
+    return [linksCount, uniqueHosts, mostPopularHost];
+}
+
+function logStats() {
+    [imgsCount, maxImgWidth, maxImgHeight, maxImgName] = getImagesStats();
+    console.log({ imgsCount, maxImgWidth, maxImgHeight, maxImgName });
+
+    [anchorsCount, anchorsNames, anchorsWithEvenIds, idOfTypedAnchor] = getAnchorsStats();
+    console.log({ anchorsCount, anchorsNames, anchorsWithEvenIds, idOfTypedAnchor });
+
+    [linksCount, uniqueHosts, mostPopularHost] = getLinksStats();
+    console.log({ linksCount, uniqueHosts, mostPopularHost });
 }
