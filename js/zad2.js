@@ -21,10 +21,11 @@ function getImagesStats() {
 
 function getAnchorsStats() {
     var anchorsCount = document.anchors.length;
-    var anchorsNames = document.anchors.keys;
+    var anchorsNames = [];
     var anchorsWithEvenIds = [];
 
     for (var i = 0; i < document.anchors.length; i++) {
+        anchorsNames.push(document.anchors.item(i).name)
         if (i % 2 == 0)
             anchorsWithEvenIds.push(document.anchors.item(i));
     }

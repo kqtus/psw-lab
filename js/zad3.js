@@ -2,9 +2,10 @@ function changeBgColor(bgId) {
     document.getElementById(bgId).style.color = document.getElementById("bg-color-selector").rgba;
 }
 
-var main_div = document.getElementsByClassName("content_main_section_full")[0];
+
 
 function getMainDiv() {
+    var main_div = document.getElementsByClassName("content_main_section_full")[0];
     return main_div;
 }
 function changeBgColor(color) {
@@ -16,7 +17,7 @@ function changeFgColor(color) {
 }
 
 function changeFont(font) {
-    getMainDiv().style.fontFamily = font;
+    getMainDiv().style.fontFamily = font.toString();
     console.log(getMainDiv().style.fontFamily);
 }
 

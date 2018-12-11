@@ -11,9 +11,8 @@ function addScaledDiv(width, height, color, borderRadius, text) {
     square.style.background = color;
     square.style.borderRadius = borderRadius.toString() + "px";
     parent_div.appendChild(square); 
-    console.log(square);   
+    console.log(square);
 }
-
 
 function createScaledDiv(screenX, screenY, scale, text) {
     var color = "#000000";
@@ -57,6 +56,7 @@ function keydown(e) {
         console.log('Adding div while mouse at ' + event.clientX + " " + event.clientY);
         createScaledDiv(window.screenX, window.screenY, scale, "btn");
     }
+
 
     // mousemove, mouseover, mouseout
 }

@@ -232,9 +232,27 @@
                 </li>
             </ol>
 
+
+        
+            <button id="btn_to_observe">Observe</button>
+            <script>
+                var observable_btn = document.getElementById("btn_to_observe");
+                observable_btn.addEventListener('mouseover', function() {
+                    console.log('mouse over observable');
+                }, true);
+                observable_btn.addEventListener('mouseout', function() {
+                    console.log('mouse over mouseout');
+                }, true);
+                observable_btn.addEventListener('mousemove', function() {
+                    console.log('mouse over mousemove');
+                }, true);
+                observable_btn.addEventListener('mousedown', function() {
+                    alert('observed button pressed!');
+                }, true);
+            </script>
             <div>
                 <button id="stats_btn" onclick="logStats()" class="main_btn">Get page stats.</button> 
-                <a id="stats_btn_hint">You will get log about usage of DOM containers (links, images and anchors) in console.</a>
+                <a id="stats_btn_hint" style="visibility: invisible;">You will get log about usage of DOM containers (links, images and anchors) in console.</a>
             </div>
             
             
@@ -252,15 +270,18 @@
 
             <label>Would you like to change the font?
                 <select id="font_select" onchange="onFontSelChanged()">
-                    <option selected>Times New Roman</option>
-                    <option>Comic Sans</option>
-                    <option>Calbiri</option>
+                    <option>courier</option>
+                    <option>sans-serif</option>
+                    <option selected>calbiri</option>
                 </select>
             </label>
 
-            <div id="scaled_divs">
-                
+            <div id="scaled_divs">        
             </div>
+
+            <a name="quora_a" href="https://www.quora.com" style="color:brown;">Quora</a>
+            <a name="sf" href="https://www.stackoverflow.com" style="color:brown;">stackoverflow</a>
+            <a name="niebezpiecznik" href="https://niebezpiecznik.pl" style="color:brown;" id="nb_a">Niebezpiecznik</a>
         </div>
 
         
