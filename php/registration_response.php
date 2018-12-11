@@ -6,6 +6,121 @@
 
     <body>
         <?php
+            interface IDbInsert {
+                function getInsertQuery();
+            }
+
+            class DbQueryBuilder {
+                protected $db_manager;
+
+                public function __construct($db_mgr) {
+                    $this->db_manager = $db_mgr;
+                }
+
+                public function buildInsert($table, $values) {
+                    $query = "INSERT INTO " . $table . " VALUES(";
+                    $i = 0;
+
+                    foreach ($values as $value) {
+                        $formatted_val = $value;
+                        
+                        if (is_string($formatted_val)) {
+                            $formatted_val = "'" . $formatted_val . "'";
+                        }
+
+                        $query .= $formatted_val;
+                        $query .=  ($i == count($values) - 1) ? ");" : ", ";
+                        $i++;
+                    }
+
+                    return $query;
+                }
+            }
+
+            class DbData {
+                protected $db_manager = '';
+
+                public function __construct($db_mgr) {
+                    $this->db_manager = $db_mgr;
+                }
+
+                protected function getDbManager() {
+                    return $this->db_manager;
+                }
+
+                protected function getQueryBuilder() {
+                    return $this->db_manager->getQueryBuilder();
+                }
+            }
+
+            class DbUserData extends DbData implements IDbInsert {
+                public const USER_TABLE = "pr_users";
+
+                public $mName = '';
+                public $mLastName = '';
+                public $mPassword = '';
+                public $mQuestionNum = 0;
+                public $mQuestionResponse = '';
+                public $mNumber = '';
+                public $mMail = '';
+
+                public function __construct($db_mgr, $name, $last_name, $pswd, $question_num, $question_response, $number, $mail) {
+                    parent::__construct($db_mgr);
+                    
+                    $this->mName = (string)$name;
+                    $this->mLastName = (string)$last_name;
+                    $this->mPassword = (string)$pswd;
+                    $this->mQuestionNum = (string)$question_num;
+                    $this->mQuestionResponse = (string)$question_response;
+                    $this->mNumber = (string)$number;
+                    $this->mMail = (string)$mail;
+                }
+
+                public function getInsertQuery() {
+                    return $this->getQueryBuilder()->buildInsert(self::USER_TABLE, array(
+                        0,
+                       $this->mName,
+                       $this->mLastName,
+                       $this->mNumber,
+                       $this->mMail,
+                       $this->mPassword,
+                       $this->mQuestionNum,
+                       $this->mQuestionResponse
+                    ));
+                }
+            }
+            
+            class DbManager {
+                public const DB_NAME = "psw_db";
+
+                protected $database;
+                protected $query_builder = '';
+
+                public function __construct() {
+                    $this->query_builder = new DbQueryBuilder($this);
+                }
+
+                public function connect($host, $login, $pswd) {
+                    if (!($this->database = mysqli_connect($host, $login, $pswd)))
+                        return false;
+                    
+                    if (!mysqli_select_db($this->database, self::DB_NAME))
+                        return false;
+
+                    return true;
+                }
+                
+                public function getQueryBuilder() {
+                    
+                    return $this->query_builder;
+                }
+
+                public function insert($db_obj) {
+                    print($db_obj->getInsertQuery());
+                    return mysqli_query($this->database, $db_obj->getInsertQuery()); 
+                } 
+            }
+
             function isEmptyPassword($password) {
                 return strlen($password) == 0;
             }
@@ -79,6 +194,7 @@
                 return isset($value) ? $value : '';
             }
 
+
             // Public data
             $pb_data = array(
                 "fname" => getValue($_POST["first_name"]),
@@ -114,6 +230,8 @@
                 die();
             }
 
+            /* Skip password validation for testing. */
+            /*
             if (!isValidPassword($pr_data['pswd'])) {
                 print(
                     "<p>Your password does not satisfy requirements. It needs to contain at least: 1 digit, 3 upper letters, 3 lower letters, 1 special mark (@ or #).</p>"
@@ -122,6 +240,7 @@
                 );
                 die();
             }
+            */
 
             if (!isValidPhoneNumber($pb_data['phone'])) {
                 print(
@@ -131,7 +250,29 @@
                 );
                 die();
             }
+            
+            $db_mgr = new DbManager();
+            if ($db_mgr->connect("localhost", "local_admin", "pswd")) {
+                $user_data = new DbUserData(
+                    $db_mgr,
+                    $pb_data["fname"],
+                    $pb_data["lname"],
+                    $pr_data["pswd"],
+                    $pb_data["question"],
+                    $pr_data["answer"],
+                    $pb_data["phone"],
+                    $pb_data["email"]
+                );
 
+                $db_mgr->insert($user_data);
+                print('Successfully registered.');
+            }
+            else {
+                print('Could not establish connection with database.');
+            }
+            
+
+            /*
             $hostname = $_SERVER['SERVER_NAME'];
             print("Hi " . $pb_data['fname'] . " " . $pb_data['lname'] . "!  
                     Activation email has been sent to your e-mail (" . $pb_data['email'] . "). 
@@ -149,7 +290,9 @@
             for (reset($pr_data); $element = key($pr_data); next($pr_data)) {
                 $value_hash = hashString($pr_data[$element]);
                 print("<p>$element: $value_hash</p>");
-            }   
+            }
+            */
+            
         ?>
     </body>
 </html>
