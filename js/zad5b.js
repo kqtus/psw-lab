@@ -5,5 +5,5 @@ feedback_form.addEventListener('submit', function() {
 }, true);
 
 feedback_form.addEventListener('reset', function() {
-    alert('You are about to reset form.');
+    confirm('You are about to reset form.');
 }, true);
