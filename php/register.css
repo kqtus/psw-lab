@@ -55,6 +55,11 @@
     padding: 10%;
     margin-top: 10%;
 }
+
+.register .login-form{
+    padding: 10%;
+    margin-top: 10%;
+}
 .btnRegister{
     float: right;
     margin-top: 10%;
@@ -67,6 +72,8 @@
     width: 50%;
     cursor: pointer;
 }
+
+
 .register .nav-tabs{
     margin-top: 3%;
     border: none;
@@ -94,6 +101,12 @@
     border-bottom-left-radius: 1.5rem;
 }
 .register-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}
+.register-subscript {
     text-align: center;
     margin-top: 8%;
     margin-bottom: -15%;

@@ -24,7 +24,13 @@
                     <div class="col-md-9 register-right">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <p class="register-heading">
+                                    Do you already have account?
+                                    <a href="login_form.php">Login.</a>
+                                </p>
+
                                 <h3 class="register-heading">Register.</h3>
+
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -32,6 +38,9 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="last_name" class="form-control" placeholder="Last Name *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="login" class="form-control" placeholder="Login *" value="" />
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="pswd" class="form-control" placeholder="Password *" value="" />
@@ -71,7 +80,7 @@
                                         <div class="form-group">
                                             <input type="text" name="answer" class="form-control" placeholder="Enter Your Answer *" value="" />
                                         </div>
-                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                        <input type="submit" class="btnRegister"  value="Register" name="register_btn"/>
                                     </div>
                                 </div>
                             </div>
