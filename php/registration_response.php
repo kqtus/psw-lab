@@ -1,5 +1,4 @@
 <?php
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require 'database.php';
     require 'validation_utils.php';
@@ -22,6 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         return isset($value) ? $value : '';
     }
     
+    $db_mgr = new DbManager();
+    $connected_to_db = $db_mgr->connect("localhost", "local_admin", "pswd");
+
     if (isset($_POST['register_btn'])) {
         // Public data
         $pb_data = array(
@@ -79,8 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die();
         }
         
-        $db_mgr = new DbManager();
-        if ($db_mgr->connect("localhost", "local_admin", "pswd")) {
+        if ($connected_to_db) {
             $user_data = new DbUserData(
                 $db_mgr,
                 $pb_data["fname"],
@@ -127,8 +128,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $login = getValue($_POST['login']);
         $password = getValue($_POST['pswd']);
 
-        print($login . " " . $password);
-        
+        // ask database for user data
+        // if authentication passed, set $_SESSION array data
+        // also save cookie with latest login name
+        function authenticateUser($_login, $_pswd) {
+            $query = "SELECT * FROM pr_users WHERE login=\"" . $_login . "\" AND password=\"" . $_pswd ."\";";
+            print($query);
+
+            if (!isset($GLOBALS['db_mgr']))
+                return false;
+
+            $result = $GLOBALS['db_mgr']->execQuery($query);
+            
+            $ret = mysqli_num_rows($result) > 0 ? true : false;
+            mysqli_free_result($result);
+
+            return $ret;
+        }
+
+        if ($connected_to_db && authenticateUser($login, $password)) {
+            $_SESSION['user_id'] = $login;
+            $_SESSION['logged_in'] = TRUE;
+
+            require 'profile.php';
+            die();
+        } else {
+            $_SESSION['logged_in'] = FALSE;
+        }
     }
 }    
 ?>
@@ -140,6 +166,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </head>
 
     <body>
-        
+        <?php 
+            echo 'Sorry, could not login';
+        ?>
     </body>
 </html>

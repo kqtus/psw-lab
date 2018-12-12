@@ -162,6 +162,18 @@ class DbManager {
         return false;
     }
 
+    public function userExists($select_obj) {
+        $result = mysqli_query($this->database, $db_obj->getSelectQuery());
+        return $result->num_rows > 0;
+    }
+
+    public function execQuery($query) {
+        echo('exec query ' . $query);
+        
+        $result = mysqli_query($this->database, $query);
+        return $result;
+    }
+
     public function getLastError() {
         return mysqli_error($this->database);
     }

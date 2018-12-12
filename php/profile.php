@@ -1,5 +1,10 @@
 <?php
-    $user_logged = False;
+    $user_logged = false;
+    if (isset($_SESSION['logged_in'])) {
+        if ($_SESSION['logged_in'] == true) {
+            $user_logged = true;
+        }
+    }
 ?>
 
 <html lang="en">
