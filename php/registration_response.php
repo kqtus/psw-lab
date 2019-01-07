@@ -81,6 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die();
         }
         
+        $did_register = false;
+
         if ($connected_to_db) {
             $user_data = new DbUserData(
                 $db_mgr,
@@ -93,8 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $pb_data["email"]
             );
     
-            if (!$db_mgr->insert($user_data)) {
-                print('Successfully registered.');
+            if ($db_mgr->insert($user_data) != false) {
+                $did_register = true;
             }
             else {
                 print('Error while performing database transaction. Probably caused by data disintegrity.' . $db_mgr->getLastError());
@@ -103,37 +105,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         else {
             print('Could not establish connection with database.');
         }
-
-        /*
-        $hostname = $_SERVER['SERVER_NAME'];
-        print("Hi " . $pb_data['fname'] . " " . $pb_data['lname'] . "!  
-                Activation email has been sent to your e-mail (" . $pb_data['email'] . "). 
-                Please remember answer to the question " . $pb_data['question']. " (" . decodeAnswer($pb_data['question'], $pr_data['answer']) . "). " .
-                "Greetings from $hostname."
-        );
-
-        print("<p>Here is your public data:</p>");
-
-        foreach ($pb_data as $k => $value)
-            print("<p>$k: $value</p>");
-
-        print("<p>Here is your private hashed data:</p>");
-
-        for (reset($pr_data); $element = key($pr_data); next($pr_data)) {
-            $value_hash = hashString($pr_data[$element]);
-            print("<p>$element: $value_hash</p>");
-        }
-        */
     } else if (isset($_POST['login_btn'])) {
         $login = getValue($_POST['login']);
         $password = getValue($_POST['pswd']);
 
-        // ask database for user data
-        // if authentication passed, set $_SESSION array data
-        // also save cookie with latest login name
         function authenticateUser($_login, $_pswd) {
-            $query = "SELECT * FROM pr_users WHERE login=\"" . $_login . "\" AND password=\"" . $_pswd ."\";";
-            print($query);
+            $query = "SELECT * FROM pr_users WHERE name=\"" . $_login . "\" AND pswd=\"" . $_pswd ."\";";
 
             if (!isset($GLOBALS['db_mgr']))
                 return false;
@@ -141,14 +118,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $result = $GLOBALS['db_mgr']->execQuery($query);
             
             $ret = mysqli_num_rows($result) > 0 ? true : false;
-            mysqli_free_result($result);
 
             return $ret;
         }
 
         if ($connected_to_db && authenticateUser($login, $password)) {
+            session_start();
             $_SESSION['user_id'] = $login;
             $_SESSION['logged_in'] = TRUE;
+            
+            define( "FIVE_DAYS", 60 * 60 * 24 * 5 );
+            setcookie( "last_login_name", $login, time() + FIVE_DAYS );
 
             require 'profile.php';
             die();
@@ -159,15 +139,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }    
 ?>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Registration response</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
 
-    <body>
-        <?php 
-            echo 'Sorry, could not login';
-        ?>
-    </body>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <form method="post" action="registration_response.php">
+        <div class="container" style="margin-left:35%; margin-right:20%; margin-top:10%;">
+            <div class="col-md-5">
+            <?php
+            if (isset($_POST['register_btn'])) {
+                if (isset($GLOBALS['did_register'])) {
+                    if ($GLOBALS['did_register'] == true) {
+                        echo 
+                        '
+                        <h3 style="text-align: center; margin-bottom:40px;">
+                            Successfully registered! Now you can 
+                            <a href="login_form.php">login</a>.
+                        </h3>
+                        ';
+                    } else {
+                        echo 
+                        '
+                        <h3 style="text-align: center; margin-bottom:40px;">
+                            Something went wrong... please try again later.
+                        </h3>
+                        ';
+                    }
+                    echo '        </div>
+                            </div>
+                        </form>
+                    </body>
+                    </html>';
+                    die();
+                }
+            }
+            ?>
+                <h3 style="text-align: center; margin-bottom:40px;">
+                    Could not login. Invalid username and/or password.
+                    <a href="login_form.php">Try again</a>.
+                </h3>
+            </div>
+        </div>
+    </form>
+</body>
 </html>

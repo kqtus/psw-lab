@@ -1,13 +1,13 @@
-DROP DATABASE IF EXISTS nazwa_bazy;
+DROP DATABASE IF EXISTS psw_db;
 
-CREATE DATABASE nazwa_bazy;
+CREATE DATABASE psw_db;
 
-USE nazwa_bazy;
+USE psw_db;
 
-CREATE TABLE nazwa_tabeli
+CREATE TABLE psw_db
 (
    ID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-   ...
+   id
    ...
    ...
    ...

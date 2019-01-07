@@ -35,7 +35,7 @@
                                 <div class="row register-form">
                                     <div class="col">
                                         <div class="form-group">
-                                            <input type="text" name="login" class="form-control" placeholder="Login" value="" />
+                                            <input type="text" name="login" class="form-control" placeholder="Login" value="<?php echo((isset($_COOKIE['last_login_name'])) ? $_COOKIE['last_login_name'] : '');?>" />
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="pswd" class="form-control" placeholder="Password" value="" />
@@ -47,22 +47,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
-
-        <form method="post" action="save_style.php">
-            <div class="col-md-2 container">
-                <select name="theme-style" class="form-control select-theme">
-                    <option class="hidden" selected disabled>Select theme</option>
-                    <option>dark</option>
-                    <option>light</option>
-                </select>
-                <select name="text-color" class="form-control select-theme">
-                    <option class="hidden" selected disabled>Select text color</option>
-                    <option>dark</option>
-                    <option>light</option>
-                </select>
-                <input type="submit" style="width: 100%;" class="btn btn-secondary" value="Save"/>
             </div>
         </form>
     </body>

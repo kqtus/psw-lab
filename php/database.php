@@ -145,9 +145,7 @@ class DbManager {
     }
 
     public function insert($db_obj) {
-        $result = mysqli_query($this->database, $db_obj->getInsertQuery());
-
-        return $result; 
+        return mysqli_query($this->database, $db_obj->getInsertQuery());; 
     } 
 
     public function findUser(&$select_obj) {
@@ -168,8 +166,6 @@ class DbManager {
     }
 
     public function execQuery($query) {
-        echo('exec query ' . $query);
-        
         $result = mysqli_query($this->database, $query);
         return $result;
     }
