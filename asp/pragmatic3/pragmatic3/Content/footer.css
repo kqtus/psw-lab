@@ -1,0 +1,13 @@
+footer {
+    text-align: center;
+    background: #123F72;
+    color: white;
+    height: 80px;
+    margin-left: 220px;
+    font-family: Calibri;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;

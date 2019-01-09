@@ -1,0 +1,129 @@
+.body {
+    background: #101010;
+    color: #FFFFFF;
+}
+
+.el-logo-img {
+    max-width: 100%;
+    max-height: 100%;
+
+    height: 50px;
+    width: 50px;
+}
+
+.el-container {
+    text-align: center;
+}
+
+.el-top-panel {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #202020;
+}
+
+.el-login-col button {
+    margin-left: 10dp;
+    margin-right: 10dp;
+    padding-left: 10dp;
+}
+
+.el-header {
+    background-image: linear-gradient(-60deg, #5a4c77, #a58ba0);
+}
+
+.el-section {
+    background-image: linear-gradient(-60deg, #6b5d68, #4c3f64);
+}
+
+@keyframes header-prod-img-in {
+    from {
+        right: -50px;
+        opacity: 0.0;
+    }
+    to {
+        right: 0px;
+        opacity: 1.0;
+    }
+}
+
+.el-header-product-img {
+    max-width: 100%;
+    max-height: 100%;
+
+    height: 300px;
+    width: 700px;
+
+    -webkit-box-shadow: 7px 9px 36px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 9px 36px -4px rgba(0,0,0,0.75);
+    box-shadow: 7px 9px 36px -4px rgba(0,0,0,0.75);
+    
+    border-radius: 10px;
+    position: relative;
+
+    animation-name: header-prod-img-in;
+    animation-duration: 2s;
+}
+
+@keyframes header-title-in {
+    from {
+        top: -50px;
+        opacity: 0.0;
+    }
+    to {
+        top: 0px;
+        opacity: 1.0;
+    }
+}
+
+.el-header-title {
+    position: relative;
+    animation-name: header-title-in;
+    animation-duration: 2s;
+}
+
+@keyframes header-text-in {
+    from {
+        bottom: 30px;
+        opacity: 0.0;
+    }
+    to {
+        bottom: 0px;
+        opacity: 1.0;
+    }
+}
+
+.el-header-text-left {
+    position: relative;
+    animation-name: header-text-in;
+    animation-duration: 2s;
+}
+
+.el-vert-separator {
+    border-left: 1px solid #303030; 
+    padding-left: 10px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+header {
+    height: 50px;
+    background: lightcyan;
+}
+
+footer {
+    height: 50px;
+    background: PapayaWhip;
+}
+
+/* Trick */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}

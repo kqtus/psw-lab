@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="pragmatic3.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <asp:ContentPlaceHolder ID="HeaderContent" runat="server">
+        <link rel="stylesheet" href="Content/login.css" type="text/css" />
+        <link rel="stylesheet" href="Content/register.css" type="text/css" />
+        <link rel="stylesheet" href="Content/body.css">
+        <link rel="stylesheet" href="Content/main_nav.css">
+        <link rel="stylesheet" href="Content/content.css">
+        <link rel="stylesheet" href="Content/tiles/tiles.css">
+
+        <link rel="stylesheet" href="Content/home.css" />
+
+        <link href="https://fonts.googleapis.com/css?family=K2D|Bai+Jamjuree|Exo+2|Pacifico|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></asp:ContentPlaceHolder>
+
+    
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">HyperText</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" href="~/Register">Register</a></li>
+                        <li><a runat="server" href="~/Login">Login</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="container body-content" style="min-height:100%; height: 100$;">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                
+            </asp:ContentPlaceHolder>
+            <hr />
+            
+        </div>
+        <footer style="background: #101010; color: #FFFFFF; padding-top: 40px; padding-bottom: 40px; margin-bottom: -50px;">
+            <div class="container el-container">
+                <div class="row justify-content-center" >
+
+                    <div class="col-4">
+                        <a href="#"><i class="material-icons" style="font-size: 35px; padding-right: 10px;">cloud</i></a>
+                        <a href="#"><i class="material-icons" style="font-size: 35px; padding-right: 10px;">polymer</i></a>
+                        <a href="#"><i class="material-icons" style="font-size: 35px; padding-right: 10px;">g_translate</i></a>
+                        <a href="#"><i class="material-icons" style="font-size: 35px; padding-right: 10px;">dashboard</i></a>
+                        <div style="margin-top: 5px; color: #747474; font-size: 12px;">
+                            <p>Copyright © 2018 <i>Animotion</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </form>
+</body>
+</html>
