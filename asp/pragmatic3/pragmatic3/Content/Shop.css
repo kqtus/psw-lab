@@ -1,0 +1,79 @@
+﻿.item {
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.item-big-text {
+    font-size: 18px;
+}
+
+.item-italic-text {
+    font-style: italic;
+}
+
+.item-image {
+    object-fit: cover;
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.item-category {
+    color: #ffffff;
+    font-size: 9px;
+    padding: 3px;
+}
+
+.item-cat1 {
+    background-color: #ff6a00;
+}
+
+.item-cat2 {
+    background-color: #fb4c4c;
+}
+
+.item-cat3 {
+    background-color: #33fcc5;
+}
+
+.item-cat4 {
+    background-color: #4fcdfc;
+}
+
+.item-cat5 {
+    background-color: #677dff;
+}
+
+.item-cat6 {
+    background-color: #807fff;
+}
+
+.item-cat7 {
+    background-color: #ff79f0;
+}
+
+.item-cat8 {
+    background-color: #fa5a99;
+}
+
+.item:hover {
+    background-color: #dbdbdb;
+}
+
+/* Bootstrap code - it doesn't work when used from reference */
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+
+.btn-primary.btn-outline:hover {
+    color: #fff;
+}

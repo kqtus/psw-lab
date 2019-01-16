@@ -1,0 +1,13 @@
+{
+  "item1": {
+    "Id": 1,
+    "ImageUrl": "https://udemy-images.udemy.com/course/750x422/237128_e61b_4.jpg",
+    "Title": "ASP.NET For dummies",
+    "Description": "Not quite a good book",
+    "Authors": [
+      "Jan Kowalsky",
+      "Eddie Murphy"
+    ],
+    "Price": 10.10
+  }
+}
