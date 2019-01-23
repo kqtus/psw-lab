@@ -11,11 +11,17 @@ namespace pragmatic3.Source
 {
     public class ShopManager
     {
+        private static string itemsPath = "Content/items.json";
+        private static string commentsPath = "Content/comments.json";
+
         public HashSet<ProductModel> BasketProducts { get; }
+
+        protected DatabaseAdapter _dbAdapter;
 
         public ShopManager()
         {
             BasketProducts = new HashSet<ProductModel>();
+            _dbAdapter = DatabaseAdapter.GetInstance();
         }
 
         protected static ShopManager _instance;
@@ -57,9 +63,10 @@ namespace pragmatic3.Source
 
         public List<ProductModel> GetProductModels()
         {
+            /*
             try
             {
-                using (StreamReader sr = new StreamReader("Content/items.json"))
+                using (StreamReader sr = new StreamReader(itemsPath))
                 {
                     var prodModels = JsonConvert.DeserializeObject<List<ProductModel>>(sr.ReadToEnd());
                     return prodModels;
@@ -69,6 +76,8 @@ namespace pragmatic3.Source
             {
                 return new List<ProductModel>();
             }
+            */
+            return _dbAdapter.GetProducts();
         }
 
         public ProductModel GetProductModelById(int id)
@@ -77,6 +86,53 @@ namespace pragmatic3.Source
 
             var product = products.Find(model => model.Id == id);
             return product;
+        }
+
+        public List<CommentModel> GetCommentModels()
+        {
+            /*
+            try
+            {
+                using (StreamReader sr = new StreamReader(commentsPath))
+                {
+                    var commentModels = JsonConvert.DeserializeObject<List<CommentModel>>(sr.ReadToEnd());
+                    return commentModels;
+                }
+            }
+            catch (Exception e)
+            {
+                return new List<CommentModel>();
+            }*/
+
+            return _dbAdapter.GetComments();
+        }
+
+        public List<CommentModel> GetCommentModelsForProduct(int productId)
+        {
+            //return GetCommentModels().Where(x => x.ProductId == productId).ToList();
+
+            return _dbAdapter.GetComments(productId);
+        }
+
+        public void AddComment(CommentModel comment)
+        {
+            /*
+            var comments = GetCommentModels();
+            comments.Add(comment);
+
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(commentsPath))
+                {
+                    var json = JsonConvert.SerializeObject(comments);
+                    sw.Write(json);
+                }
+            }
+            catch (Exception e)
+            {
+            }
+            */
+            _dbAdapter.AddComment(comment);
         }
     }
 }

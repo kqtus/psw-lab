@@ -30,5 +30,20 @@ textarea {
     }
 }
 
+/* Bootstrap code - it doesn't work when used from reference */
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+
+.btn-primary.btn-outline:hover {
+    color: #fff;
+}
+
 @import url("login.css");
 @import url("register.css");

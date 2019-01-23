@@ -74,8 +74,10 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/Register">Register</a></li>
-                        <li><a runat="server" href="~/Login">Login</a></li>
+                        <li style="margin-right: 10px;"><asp:Button runat="server" CssClass="btn btn-primary btn-outline" ID="RegisterBtn" Text="Register" PostBackUrl="~/Register.aspx"/></li>
+                        <li style="margin-right: 10px;"><asp:Button runat="server" CssClass="btn btn-primary btn-outline" ID="LoginBtn" Text="Sign in" PostBackUrl="~/Login.aspx"/></li>
+                        <li style="margin-right: 25px; padding-top: 15px;"><asp:Label runat="server" ID="GreetingLabel" style="color: #b2b2b2"/></li>
+                        <li style="margin-right: 10px;"><asp:Button runat="server" CssClass="btn btn-primary btn-outline" ID="LogoutBtn" Text="Logout" OnClick="LogoutBtn_Click"/></li>
                     </ul>
                 </div>
 
